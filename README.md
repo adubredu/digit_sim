@@ -19,16 +19,16 @@ To install dependencies,
 
 To run navigation example
 
-
-	`cd examples`
-
-	`python navigation_example.py`
+	```
+	$ cd examples 
+	$ python navigation_example.py
+	```
 
 
 To run manipulation example
 
-	`cd examples`
-	
-	`python manipulation_example.py`
-
+	```
+	cd examples
+	python manipulation_example.py
+	```
 
