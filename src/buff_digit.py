@@ -2,9 +2,7 @@ import numpy as np
 import time
 import pybullet_data
 import pybullet as p
-import pybullet_planning as pyplan
-from pybullet_planning import Pose, Point
-# from trac_ik_python.trac_ik import IK
+import pybullet_planning as pyplan  
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.pardir))
@@ -334,90 +332,4 @@ class Buff_digit:
         imgs = p.getCameraImage(640, 640, view_matrix, projection_matrix)
         return imgs 
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-if __name__ == '__main__':
-    client = p.connect(p.GUI)
-    p.configureDebugVisualizer(p.COV_ENABLE_GUI,0)
-    # p.configureDebugVisualizer(p.COV_ENABLE_TINY_RENDERER,1)
-    # p.configureDebugVisualizer(p.COV_ENABLE_WIREFRAME,0)
-
-    p.setRealTimeSimulation(1)
-    p.setGravity(0, 0, -9.81)
-    p.setPhysicsEngineParameter(enableConeFriction=0)
-    p.setAdditionalSearchPath('../models')
-    kitchen_path = 'kitchen_description/urdf/kitchen_part_right_gen_convex.urdf'
-    with pyplan.HideOutput(enable=True):
-        floor = p.loadURDF('floor/floor.urdf',useFixedBase=True)
-
-        robot = Buff_digit(client)
-        time.sleep(5)
-        kitchen = p.loadURDF(kitchen_path,[-5,0,1.477],useFixedBase=True)
-        table1 = p.loadURDF('table/table.urdf',[1.0,0,0], p.getQuaternionFromEuler([0,0,1.57]), useFixedBase=False)
-        table2 = p.loadURDF('table/table.urdf',[-1.0,-2.0,0], useFixedBase=False)
-        # pepsi = p.loadSDF('can_pepsi/model.sdf')
-        # pepsi = pepsi[0]
-        # pyplan.set_pose(pepsi, Pose(Point(x=0.7, y=-0.3, z=pyplan.stable_z(pepsi, table1))))
-        
-        # p.setAdditionalSearchPath(pybullet_data.getDataPath())
-        # pepsi = p.loadURDF("cube_small.urdf")
-        # pyplan.set_pose(pepsi, Pose(Point(x=0.7, y=-0.3, z=pyplan.stable_z(pepsi, table1))))
-
-    '''    
-    pick_pose = [0.2,-0.25,0]
-    place_pose= [-1.0,-1.0,-1.57]
-    stove_pose = [-4.0,0.5,-3.1415 ]
-    base_limits = ((-2.5, -2.5), (2.5, 2.5))
-    for i in range(10):
-        robot.plan_and_drive_to_pose(place_pose, base_limits,obstacles=[table1,table2])
-        robot.get_camera_images()
-        time.sleep(2)
-        robot.plan_and_drive_to_pose(pick_pose, base_limits,obstacles=[table1,table2])
-        robot.get_camera_images()
-        time.sleep(2)
-        robot.plan_and_drive_to_pose(stove_pose, base_limits,obstacles=[table1,table2, kitchen])
-        robot.get_camera_images()
-        time.sleep(2) 
-
-    
-    # robot.pick_up(pepsi,'right_arm')
-    # time.sleep(5)
-    # robot.place_at([0.7, 0, 1.1],'right_arm')
-    # print('done')
-    # time.sleep(200)
-     
-    # while True:
-    #     robot.get_camera_images()
-    #     p.stepSimulation() 
-    '''
-    pose = [(0.7,-0.3, 0.9),(0,0,0,1)]
-    confs = robot.plan_arm_motion(pose, "right_arm")
-    # print(confs)
-    # for conf in confs:
-    #     robot.drive_arm_joints(robot.arm_joints['right_arm'], conf)
-    #     po = robot.forward_kinematics(conf, 'right_arm')
-    #     print(robot.tf_world_frame(po, 'right_arm'))
-        # time.sleep(0.05)
-    # print('gt: ',pyplan.get_link_pose(robot.id, robot.arms_ee['right_arm']))
-    cost = robot.get_traj_obst_cost(confs, 'right_arm', obstacles=[table1])
-    print(cost)
-    goalcost = robot.get_traj_goal_cost(confs, pose, 'right_arm')
-    print(goalcost)
-    time.sleep(200)
+         
