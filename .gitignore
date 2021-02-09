@@ -1,1 +1,5 @@
 src/__pychache__
+utils/__pycache__
+utils/ikfast/__pycache__
+utils/ikfast/left_arm/__pycache__
+utils/ikfast/right_arm/__pycache__
