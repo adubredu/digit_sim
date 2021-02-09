@@ -29,10 +29,12 @@ Digit moving in 'circles'
 
 ![](navigation.gif)
 
+
 To run manipulation example
  
 	$ cd examples
 	$ python manipulation_example.py 
 
 Digit picking up a 'coke' can
+
 ![](manipulation.gif)
