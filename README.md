@@ -1,7 +1,7 @@
 # digit_sim
 Pybullet simulation package for Digit robot.
 
-This digit simulation can perform both path planning and arm motion planning using Caelan Garrett's [pybullet_planning](https://pybullet-planning.readthedocs.io/en/latest/) package. It also uses [IKFast](http://openrave.org/docs/0.8.0/openravepy/ikfast/) as the inverse kinematics solver for Digit's arms.
+This digit simulation can perform both path planning and arm motion planning using Caelan Garrett's [pybullet_planning](https://pybullet-planning.readthedocs.io/en/latest/) package. It also uses [IKFast](http://openrave.org/docs/0.8.0/openravepy/ikfast/) as the inverse kinematics solver for Digit's arms. In my bid to skirt Digit's tedious bipedial locomotion trouble, I made the joints in Digit's legs fixed joints and attached a hoverboard beneath his long legs for good measure.
 
 
 ## Installation
@@ -22,9 +22,14 @@ To run navigation example
 	$ cd examples 
 	$ python navigation_example.py 
 
+Digit moving in 'circles'
+
+![](navigation.gif)
 
 To run manipulation example
  
 	$ cd examples
 	$ python manipulation_example.py 
 
+Digit picking up a 'coke' can
+![](manipulation.gif)
