@@ -10,25 +10,21 @@ It is recommended that you install this package in a conda environment. Here's h
 To install dependencies,  
 1. Clone this repo
 
-	`git clone https://github.com/alphonsusadubredu/digit_sim.git`
+	`$ git clone https://github.com/alphonsusadubredu/digit_sim.git`
 
 2. Install dependencies
 
-	`pip install -r requirements.txt`
+	`$ pip install -r requirements.txt`
 
 
 To run navigation example
-
-	```
+ 
 	$ cd examples 
-	$ python navigation_example.py
-	```
+	$ python navigation_example.py 
 
 
 To run manipulation example
-
-	```
-	cd examples
-	python manipulation_example.py
-	```
+ 
+	$ cd examples
+	$ python manipulation_example.py 
 
