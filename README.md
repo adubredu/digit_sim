@@ -3,7 +3,7 @@ Pybullet simulation package for Digit robot.
 
 This digit simulation can perform both path planning and arm motion planning using Caelan Garrett's [pybullet_planning](https://pybullet-planning.readthedocs.io/en/latest/) package. It also uses [IKFast](http://openrave.org/docs/0.8.0/openravepy/ikfast/) as the forward and inverse kinematics solver for Digit's arms. 
 
-In my bid to skirt Digit's tedious bipedial locomotion trouble, I made the joints in Digit's legs fixed joints and mounted it on a hoverboard for good measure.
+In my bid to skirt Digit's tedious bipedal locomotion trouble, I made the joints in Digit's legs fixed joints and mounted it on a hoverboard for good measure.
 
 
 ## Installation
